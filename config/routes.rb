@@ -9,4 +9,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+  resources :posts do
+    collection do
+      get 'filter'
+      get 'search'
+    end
+  end
 end
