@@ -10,12 +10,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  # resources :posts do
-    # collection do
-      # get 'filter'
+  resources :posts do
+    collection do
+      get 'filter'
       # get 'search'
-    # end
-  # end
+    end
+  end
   resources :posts, only: [:index]
   get 'posts/search', to: 'posts#search', as: 'search_posts'
   get '/my_posts', to: 'users#my_posts', as: :my_posts
